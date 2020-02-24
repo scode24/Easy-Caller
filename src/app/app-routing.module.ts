@@ -8,6 +8,14 @@ const routes: Routes = [
     path: 'add-contact',
     loadChildren: () => import('./add-contact/add-contact.module').then( m => m.AddContactPageModule)
   },
+  {
+    path: 'edit-contact',
+    loadChildren: () => import('./edit-contact/edit-contact.module').then( m => m.EditContactPageModule)
+  },
+  {
+    path: 'edit-entry',
+    loadChildren: () => import('./edit-entry/edit-entry.module').then( m => m.EditEntryPageModule)
+  },
 ];
 
 @NgModule({

@@ -1,0 +1,40 @@
+<ion-toolbar color="primary">
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Edit Contact</ion-title>
+</ion-toolbar>
+
+
+<ion-content>
+  <form onsubmit="processForm(event)">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+
+      <ion-item>
+        <ion-avatar style="margin: 10px; width: 100px; height: 100px;">
+          <img [src]="imagePath" />
+        </ion-avatar>
+        <ion-button (click)="uploadImage()">
+          <ion-icon name="images"></ion-icon>&nbsp;
+          Upload photo
+        </ion-button>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Name <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="text" [(ngModel)]="nameValue" name="nameTxt"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Landline/Mobile No <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input required type="number" [(ngModel)]="phnoValue" name="phnoTxt"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="full" color="primary" (click)="saveContact()">Save Contact</ion-button>
+</ion-footer>
